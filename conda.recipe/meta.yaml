@@ -1,0 +1,35 @@
+{% set name = "ucrdtw" %}
+{% set version = "0.201" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 7ec4736634849b692e588ad0ce4a3130221f13d476c6e2652f386cd484049ebd
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+    - numpy
+  run:
+    - python
+
+about:
+  home: "https://pypi.python.org/pypi/pip"
+  license: MIT
+  license_family: MIT
+  license_file:
+  summary: "Fast Dynamic Time Warping, O(n log n)"
+  doc_url:
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
